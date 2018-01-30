@@ -1,0 +1,14 @@
+swig -python -Isrc NeuroMem.i
+g++ -fPIC \
+	-I/usr/include/python3.5m \
+	-c src/NeuroMem.cpp NeuroMem_wrap.c
+
+g++ -shared NeuroMem.o NeuroMem_wrap.o \
+	-I/usr/local/include \
+	-L/usr/local/lib  -lft4222 \
+	-Wl,-soname,_NeuroMem.so \
+	-o _NeuroMem.so 
+
+python3 -c "import NeuroMem"
+
+
