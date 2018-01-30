@@ -5,7 +5,7 @@ make calls [through gvcomm_ns4k.cpp] to USB driver library provided by respectiv
 download and install these and provide path for linker [such as -L/usr/local/include -lft4222] 
 during compilation so that the approprate driver .so file is linked during compilation 
 of _NeuroMEM.so file. 
-Once you _NeuroMEM.so is generated, you can run a basic sanity check  as follow
+Once your _NeuroMEM.so is generated, you can run a basic sanity check as follows
 python3 
 > import NeuroMem
 > help(NeuroMen)
