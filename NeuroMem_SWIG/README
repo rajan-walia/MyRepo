@@ -1,11 +1,19 @@
 //*********************************************************************************************
-Purpose of this exercise was to make NeuroMEM API written in C++ available in python. These APIs
-make calls [through gvcomm_ns4k.cpp] to USB driver library provided by respective vendors 
+Purpose of this exercise was to make NeuroMEM API written in C++ available in python.
+
+SWIG has been used for this purpose. If you dont have swig installed on your system please
+do "sudo apt-get install swig". [I assume you already have a g++ complier, python3 installed]
+
+These APIs make calls [through gvcomm_ns4k.cpp] to USB driver library provided by respective vendors 
 [FTDI/Cypress etc]. These files are generally available from the vendor's website. Please 
-download and install these and provide path for linker [such as -L/usr/local/include -lft4222] 
-during compilation so that the approprate driver .so file is linked during compilation 
+download and install these.
+
+You will need to provide path for linker [such as "-L/usr/local/include -lft4222" for FTDI' USB] 
+during compilation so that the approprate driver libfft4222.so file is linked during compilation 
 of _NeuroMEM.so file. 
+
 Once your _NeuroMEM.so is generated, you can run a basic sanity check as follows
+
 python3 
 > import NeuroMem
 > help(NeuroMen)
